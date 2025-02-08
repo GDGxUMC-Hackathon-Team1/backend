@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class DefaultController {
     @GetMapping
+    /** 헬스 체크용  */
     public ResponseEntity<String> sayHello(@PathVariable(name = "path") String path) {
         return ResponseEntity.ok("Hello " + path + "!");
     }
+
+
 }
