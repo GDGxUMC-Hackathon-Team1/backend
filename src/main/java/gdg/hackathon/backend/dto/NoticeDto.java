@@ -23,7 +23,6 @@ public class NoticeDto {
     private String tag;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
-
-
+    String schedule;
 
 }

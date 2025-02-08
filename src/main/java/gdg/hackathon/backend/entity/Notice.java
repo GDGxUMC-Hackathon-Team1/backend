@@ -25,6 +25,7 @@ public class Notice {
 
     private String url;
 
+    @Column(columnDefinition = "TEXT")
     private String content;
 
     private int hits;
@@ -33,6 +34,7 @@ public class Notice {
 
     private LocalDateTime updatedAt;
 
+    @Column(columnDefinition = "TEXT")
     private String summary;
 
     @JoinColumn(name = "board_id")
@@ -42,6 +44,9 @@ public class Notice {
     @JoinColumn(name = "tag_id")
     @ManyToOne
     private Tag tag;
+
+    private String schedule;
+
 
 //    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL)
 //    @Builder.Default
@@ -59,6 +64,7 @@ public class Notice {
                 .summary(this.summary)
                 .boardId(this.board != null ? this.board.getId() : null)
                 .tag(this.tag.getName())
+                .schedule(this.schedule)
                 .build();
     }
 }
