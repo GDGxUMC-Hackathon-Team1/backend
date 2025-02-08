@@ -23,6 +23,6 @@ public class Tag {
     @Column(nullable = true)
     private String description;
 
-    @OneToMany(mappedBy = "tag", cascade = CascadeType.ALL, orphanRemoval = true)
-    List<NoticeTag> noticeTags = new ArrayList<>();
+    @OneToMany(mappedBy = "tag")
+    List<Notice> notices = new ArrayList<>();
 }

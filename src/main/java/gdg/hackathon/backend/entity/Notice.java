@@ -39,9 +39,13 @@ public class Notice {
     @ManyToOne
     private Board board;
 
-    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL)
-    @Builder.Default
-    private List<NoticeTag> noticeTags = new ArrayList<>();
+    @JoinColumn(name = "tag_id")
+    @ManyToOne
+    private Tag tag;
+
+//    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL)
+//    @Builder.Default
+//    private List<NoticeTag> noticeTags = new ArrayList<>();
 
     public NoticeDto toDto() {
         return NoticeDto.builder()
@@ -54,9 +58,7 @@ public class Notice {
                 .updatedAt(this.updatedAt)
                 .summary(this.summary)
                 .boardId(this.board != null ? this.board.getId() : null)
-                .tagIds(this.noticeTags.stream()
-                        .map(noticeTag -> noticeTag.getTag().getId())
-                        .toList())
+                .tag(this.tag.getName())
                 .build();
     }
 }

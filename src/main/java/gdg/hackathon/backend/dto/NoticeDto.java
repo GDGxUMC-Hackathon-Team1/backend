@@ -20,7 +20,7 @@ public class NoticeDto {
     String summary;
     Long boardId;
     int hits;
-    private List<Long> tagIds;
+    private String tag;
     LocalDateTime createdAt;
     LocalDateTime updatedAt;
 
