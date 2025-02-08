@@ -59,7 +59,7 @@ jobs:
         with:
           name: build-artifacts
           path: |
-            build/libs/*.jar
+            build/libs/*-SNAPSHOT.jar
             src/main/java/gdg/hackathon/backend
 
   deploy:
