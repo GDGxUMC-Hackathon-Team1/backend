@@ -57,7 +57,7 @@ public class Notice {
                 .id(this.id)
                 .title(this.title)
                 .url(this.url)
-                .content(this.content)
+//                .content(this.content)
                 .hits(this.hits)
                 .createdAt(this.createdAt)
                 .updatedAt(this.updatedAt)

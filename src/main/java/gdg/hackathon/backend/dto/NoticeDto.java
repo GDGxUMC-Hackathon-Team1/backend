@@ -16,7 +16,7 @@ public class NoticeDto {
     Long id;
     String title;
     String url;
-    String content;
+//    String content;
     String summary;
     Long boardId;
     int hits;
