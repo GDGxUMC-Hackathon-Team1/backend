@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,5 +20,5 @@ public class Board {
     private String url;
 
     @OneToMany(mappedBy = "board")
-    private List<Notice> notices;
+    private List<Notice> notices = new ArrayList<>();
 }

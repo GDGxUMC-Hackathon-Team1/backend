@@ -12,7 +12,6 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Notice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,9 +32,9 @@ public class Notice {
     private String summary;
 
     @JoinColumn(name = "board_id")
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Board board;
 
-    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL)
     private List<NoticeTag> noticeTags = new ArrayList<>();
 }
