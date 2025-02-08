@@ -15,6 +15,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/notice")
+@CrossOrigin
 public class NoticeController {
     private final NoticeService noticeService;
 
