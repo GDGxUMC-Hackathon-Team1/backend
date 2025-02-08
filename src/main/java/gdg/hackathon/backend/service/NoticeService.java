@@ -9,6 +9,10 @@ import gdg.hackathon.backend.repository.NoticeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class NoticeService {
@@ -38,5 +42,22 @@ public class NoticeService {
         // 모두 모아서 저장
         Notice saved = noticeRepository.save(notice);
         return saved.toDto();
+    }
+
+    public NoticeDto findById(Long id) {
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow();
+        return notice.toDto();
+    }
+
+    public List<NoticeDto> getNoticesByFilters(String category, List<String> tags) {
+        return noticeRepository.findTop10NoticesByCategoryAndTags(category, tags).stream()
+                    .map(Notice::toDto)
+                    .collect(Collectors.toList());
+    }
+
+    public List<NoticeDto> getRecommendedNotices(Map<String, String> preferences) {
+        // ai 서버에 연관도 분석 요청 넣음
+        return null;
     }
 }

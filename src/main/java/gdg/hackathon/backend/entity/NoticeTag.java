@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Deprecated
 public class NoticeTag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

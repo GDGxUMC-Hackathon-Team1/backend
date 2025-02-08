@@ -15,7 +15,7 @@ public class Preferences {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String key;
+    private String prefKey;
 
     private String value;
 
