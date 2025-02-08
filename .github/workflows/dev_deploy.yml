@@ -1,4 +1,4 @@
-name: Jimkanman CI/DE Java with Gradle (on develop branch)
+name: Cheongryong-thon backend ci/de
 
 on:
   push:
@@ -60,7 +60,7 @@ jobs:
           name: build-artifacts
           path: |
             build/libs/*.jar
-            src/main/java/com/jkm/jimkanman
+            src/main/java/gdg/hackathon/backend
 
   deploy:
     name: Deliver using SSH
